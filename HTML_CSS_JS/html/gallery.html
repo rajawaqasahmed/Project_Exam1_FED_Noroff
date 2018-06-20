@@ -14,7 +14,44 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     
+     <script>
+            function openModal() {
+              document.getElementById('myModal').style.display = "block";
+            }
+
+            function closeModal() {
+              document.getElementById('myModal').style.display = "none";
+            }
+
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("demo");
+              var captionText = document.getElementById("caption");
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " active";
+              captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+     </script>
 </head>
   <body class="my-font"; style="background-image:url(../images/bg_image.jpeg)">
       <div class="col-sm-12"> <!-- header --> 
@@ -58,7 +95,122 @@
       </div>
       
       
-      <!-- Main content section-->
+      <h2 style="text-align:center; color:white">Gallery  <font size="2">   (Click on the image to enlarge the view)</font></h2> 
+
+<div class="row">
+  <div class="column">
+    <img src="../images/AdobeStock_136021630_Preview.jpeg" style="width:90%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="../images/AdobeStock_105677222_Preview.jpeg" style="width:90%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="../images/AdobeStock_37644114_Preview.jpeg" style="width:90%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="../images/AdobeStock_48522646_Preview.jpeg" style="width:90%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+ <div class="row">
+  <div class="column">
+    <img src="../images/AdobeStock_53709275_Preview.jpeg" style="width:90%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="../images/AdobeStock_56219271_Preview.jpeg" style="width:90%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="../images/AdobeStock_72269109_Preview.jpeg" style="width:90%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="../images/AdobeStock_74046583_Preview.jpeg" style="width:90%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+<div class="container" >
+  <div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()"><h1 style="color: white">&times;</h1></span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 8</div>
+      <img src="../images/AdobeStock_136021630_Preview.jpeg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 8</div>
+      <img src="../images/AdobeStock_105677222_Preview.jpeg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 8</div>
+      <img src="../images/AdobeStock_37644114_Preview.jpeg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 8</div>
+      <img src="../images/AdobeStock_48522646_Preview.jpeg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">5 / 8</div>
+      <img src="../images/AdobeStock_53709275_Preview.jpeg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 8</div>
+      <img src="../images/AdobeStock_56219271_Preview.jpeg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">7 / 8</div>
+      <img src="../images/AdobeStock_72269109_Preview.jpeg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">8 / 8</div>
+      <img src="../images/AdobeStock_74046583_Preview.jpeg" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="../images/AdobeStock_136021630_Preview.jpeg" style="width:100%" onclick="currentSlide(1)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/AdobeStock_105677222_Preview.jpeg" style="width:100%" onclick="currentSlide(2)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/AdobeStock_37644114_Preview.jpeg" style="width:100%" onclick="currentSlide(3)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/AdobeStock_48522646_Preview.jpeg" style="width:100%" onclick="currentSlide(4)">
+    </div>
+         
+    <div class="column">
+      <img class="demo cursor" src="../images/AdobeStock_53709275_Preview.jpeg" style="width:100%" onclick="currentSlide(5)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/AdobeStock_56219271_Preview.jpeg" style="width:100%" onclick="currentSlide(6)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/AdobeStock_72269109_Preview.jpeg" style="width:100%" onclick="currentSlide(7)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="../images/AdobeStock_74046583_Preview.jpeg" style="width:100%" onclick="currentSlide(8)">
+    </div>
+  </div>
+</div>    
+      </div>
+
+      
+      
+      
+      <!-- Main content section
       <div class="row">
       <div class="container" style="color: white;background-color: rgb(255,255,255,0.2);">
           <div >
@@ -83,7 +235,7 @@
           </div>
         </div>  
       </div>
-
+-->
       <div class="col-sm-12 my_div_12_col">  <!-- footer form--> 
           <div class="container">
              <font color="white">
