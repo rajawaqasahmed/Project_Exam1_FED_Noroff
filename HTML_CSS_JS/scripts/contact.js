@@ -1,47 +1,3 @@
-/*
-function validate(){
-	var x=document.getElementById('fname').value;
-	var y=document.getElementById('lastName').value;
-	var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-	var email=document.getElementById('email').value;
-	var tele=document.getElementById('phone').value;
-	var fonePattern = /^[0-9]{3}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
-    
-    
-	if(x==""){
-        alert("CANNOT BE EMPTY");
-        document.getElementById('fnError').innerHTML = "This field cannot be empty";
-		document.getElementById('firstNameError').style.display = 'block';
-		
-        
-        
-	}
-	else{
-		alert("you entered a valid name");
-	}
-	if(y==""){
-		document.getElementById('lastNameError').style.display = 'block';
-	}
-	else{
-		alert("you entered a valid name");
-	}
-	
-	if(emailPattern.test(email)){
-		alert("valid email ID");
-	}
-	else{
-		document.getElementById('emailError').style.display = 'block';
-	}
-	if(fonePattern.test(tele)){
-		
-		alert("correct fone no");
-	}
-	else{
-		document.getElementById('phoneError').style.display = 'block';
-	}
-}
-*/
-
 function validate() {
     var x, text;
 
@@ -50,6 +6,7 @@ function validate() {
     lastName = document.getElementById("lname").value;
     emailText = document.getElementById("email").value;
     phoneText = document.getElementById("phone").value;
+    commentText = document.getElementById("comments").value;
 
     
     // patterns validation
@@ -93,6 +50,15 @@ function validate() {
         text = "Example: XXX-XXX-XXXX or XXX.XXX.XXXX";
     }
     document.getElementById("phText").innerHTML = text;
+
+// If comments is empty
+    if (isNaN(commentText)) {
+        text = "Input OK";
+        
+    } else {
+        text = "Please write your comments/query here";
+    }
+    document.getElementById("commentText").innerHTML = text;
 
 
 }
